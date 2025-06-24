@@ -1,0 +1,26 @@
+:host {
+  width: 100%;
+  flex: 1;
+
+  header.header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    padding: 40px;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+
+    a {
+      color: var(--main-text);
+      text-decoration: none;
+      transform: color 0.3 ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

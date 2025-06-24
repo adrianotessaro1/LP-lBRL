@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "hero": "Início",
+    "howItWorks": "Como Funciona",
+    "proofOfReserves": "Reservas",
+    "apiFirst": "API",
+    "whitelabel": "Whitelabel",
+    "useCases": "Casos de Uso",
+    "faq": "Perguntas",
+    "finalCTA": "Começar"
+  },
+  "headline": "Entre e saia do Brasil em segundos.",
+  "subHeadline": "O tBRL é a stablecoin 100% lastreada em real que conecta o Pix à Web3, liberando liquidez instantânea para exchanges, fintechs, bancos digitais e corporações globais.",
+  "startIntegration": "Começar Integração",
+  "whitepaper": "Whitepaper (PDF)",
+  "socialProof": "Mais de 20 MM de transações on-chain processadas no primeiro mês.",
+
+  "howItWorks": {
+    "title": "Como o tBRL Funciona",
+    "onRamp": "Pix-IN",
+    "offRamp": "Pix-OUT",
+    "crossBorder": "Cross-Border"
+  },
+
+  "proofOfReserves": {
+    "title": "Transparência não é promessa, é código aberto.",
+    "bullet1": "Conta segregada e auditada com registro on-chain.",
+    "bullet2": "Oráculo publica saldo BRL → contrato Proof-of-Reserves.",
+    "bullet3": "Qualquer pessoa pode verificar `totalSupply()` × saldo bancário via API."
+  },
+
+  "apiFirst": {
+    "title": "Plug & Play via REST ou WebSocket.",
+    "subTitle": "Automatize emissão, queima, KYC e relatórios contábeis em poucas linhas de código.",
+    "codeExample": "POST /v1/mint { \"pixKey\": \"empresa@banco.com.br\", \"amount\": \"1_000.00\" }",
+    "latency": "Latência Pix < 3s",
+    "freeSandbox": "Sandbox gratuito",
+    "webhooks": "Webhooks para conciliação automática",
+    "viewDocs": "Ver documentação"
+  },
+
+  "whitelabel": {
+    "title": "Sua marca, nosso motor de liquidez.",
+    "paragraph": "Lance sua própria stablecoin em real — com seu logo, cor de marca e domínio — sobre a reserva segregada do tBRL. Ideal para bancos digitais, marketplaces de cripto e programas de fidelidade que precisam de BRL on-chain sem montar a infraestrutura do zero.",
+    "secondaryCall": "Fale com nosso time de soluções enterprise."
+  },
+
+  "useCases": {
+    "title": "Casos de Uso",
+    "exchange": "Exchanges Globais",
+    "fintech": "Fintechs de Pagamento",
+    "rwaManagers": "Gestores de RWA",
+    "remittance": "Empresas de Remessa"
+  },
+
+  "faq": {
+    "isTBRLRegulated": "O tBRL é regulado pelo Bacen?",
+    "sla": "Qual o SLA de resgate?",
+    "mintingCap": "Existe limite de emissão?",
+    "kyc": "Posso integrar sem KYC?",
+    "contract": "Onde vejo o contrato?",
+    "proofOfReserves": "Onde vejo a prova de reservas?",
+    "howDoesKYCWork": "Como funciona o KYC?",
+    "access": "Como são feitos os acessos?"
+  },
+
+  "finalCTA": {
+    "headline": "Pronto para desbloquear o Brasil on-chain?",
+    "subHeadline": "Teste o sandbox hoje mesmo ou agende uma demonstração personalizada com nosso time técnico.",
+    "createAPIKey": "Criar chave de API",
+    "scheduleDemo": "Agendar demo"
+  },
+
+  "footer": {
+    "links": {
+      "whitepaper": "Whitepaper",
+      "proofOfReserves": "Prova de Reservas",
+      "apiDocs": "Documentação da API",
+      "termsOfUse": "Termos de Uso",
+      "amlPolicy": "Política AML/KYC"
+    },
+    "newsletter": "Receba atualizações mensais sobre liquidez BRL on-chain.",
+    "subscribe": "Inscrever-se",
+    "social": {
+      "x": "X",
+      "linkedin": "LinkedIn",
+      "telegram": "Telegram"
+    },
+    "copyright": "© 2025 tBRL LTDA | CNPJ XX.XXX.XXX/0001-XX"
+  }
+}

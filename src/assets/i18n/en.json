@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "hero": "Home",
+    "howItWorks": "How it Works",
+    "proofOfReserves": "Reserves",
+    "apiFirst": "API",
+    "whitelabel": "Whitelabel",
+    "useCases": "Use Cases",
+    "faq": "FAQ",
+    "finalCTA": "Get Started"
+  },
+  "headline": "Enter and exit Brazil in seconds.",
+  "subHeadline": "tBRL is the 100% BRL-backed stablecoin that connects Pix to Web3, unlocking instant liquidity for exchanges, fintechs, digital banks, and global enterprises.",
+  "startIntegration": "Start Integration",
+  "whitepaper": "Whitepaper (PDF)",
+  "socialProof": "Over 20 MM on-chain transactions processed in the first month.",
+
+  "howItWorks": {
+    "title": "How tBRL Works",
+    "onRamp": "Pix-IN",
+    "offRamp": "Pix-OUT",
+    "crossBorder": "Cross-Border"
+  },
+
+  "proofOfReserves": {
+    "title": "Transparency isn’t a promise—it’s open-source code.",
+    "bullet1": "Segregated, audited account with on-chain record.",
+    "bullet2": "Oracle publishes BRL balance → Proof-of-Reserves contract.",
+    "bullet3": "Anyone can verify `totalSupply()` × bank balance via API."
+  },
+
+  "apiFirst": {
+    "title": "Plug & Play via REST or WebSocket.",
+    "subTitle": "Automate minting, burning, KYC, and accounting reports in just a few lines of code.",
+    "codeExample": "POST /v1/mint { \"pixKey\": \"company@bank.com.br\", \"amount\": \"1_000.00\" }",
+    "latency": "Pix latency < 3s",
+    "freeSandbox": "Free sandbox",
+    "webhooks": "Webhooks for automatic reconciliation",
+    "viewDocs": "View Documentation"
+  },
+
+  "whitelabel": {
+    "title": "Your brand, our liquidity engine.",
+    "paragraph": "Launch your own BRL-denominated stablecoin—complete with your logo, brand colors, and domain—on top of tBRL’s segregated reserve. Perfect for digital banks, crypto marketplaces, and loyalty programs that need BRL on-chain without building infrastructure from scratch.",
+    "secondaryCall": "Talk to our Enterprise Solutions team."
+  },
+
+  "useCases": {
+    "title": "Use Cases",
+    "exchange": "Global Exchanges",
+    "fintech": "Payment Fintechs",
+    "rwaManagers": "RWA Managers",
+    "remittance": "Remittance Companies"
+  },
+
+  "faq": {
+    "isTBRLRegulated": "Is tBRL regulated by Bacen?",
+    "sla": "What is the redemption SLA?",
+    "mintingCap": "Is there a minting cap?",
+    "kyc": "Can I integrate without KYC?",
+    "contract": "Where is the contract?",
+    "proofOfReserves": "Where do I see the proof of reserves?",
+    "howDoesKYCWork": "How does KYC work?",
+    "access": "How do I access the services?"
+  },
+
+  "finalCTA": {
+    "headline": "Ready to unlock on-chain Brazil?",
+    "subHeadline": "Spin up the sandbox today or book a personalized demo with our tech team.",
+    "createAPIKey": "Create API Key",
+    "scheduleDemo": "Schedule Demo"
+  },
+
+  "footer": {
+    "links": {
+      "whitepaper": "Whitepaper",
+      "proofOfReserves": "Proof of Reserves",
+      "apiDocs": "API Docs",
+      "termsOfUse": "Terms of Use",
+      "amlPolicy": "AML/KYC Policy"
+    },
+    "newsletter": "Get monthly updates on BRL on-chain liquidity.",
+    "subscribe": "Subscribe",
+    "social": {
+      "x": "X",
+      "linkedin": "LinkedIn",
+      "telegram": "Telegram"
+    },
+    "copyright": "© 2025 tBRL LTDA | CNPJ XX.XXX.XXX/0001-XX"
+  }
+}
