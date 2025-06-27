@@ -28,9 +28,10 @@ export function LangHttpLoaderFactory(
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
 }
 
-const userLang = window.navigator.language.toLowerCase().startsWith('en')
+/*const userLang = window.navigator.language.toLowerCase().startsWith('en')
   ? 'en'
-  : 'pt-br';
+  : 'pt-br'; */
+const userLang = 'pt-br';
 
 export const appConfig: ApplicationConfig = {
   providers: [

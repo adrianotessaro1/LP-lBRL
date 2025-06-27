@@ -1,0 +1,68 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  width: 100%;
+  position: relative;
+  height: 100dvh;
+
+  .background-wrapper {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: calc(
+      100dvh - #{v.$header-height}
+    ); // Take into account the header size
+    z-index: 1;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content {
+    padding: 140px 80px;
+    justify-content: center;
+    height: 100%;
+
+    .blockquote {
+      z-index: 3;
+      color: v.$text-light-300;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      max-width: 800px;
+      z-index: 10;
+      h1 {
+        font-size: 4rem;
+        text-wrap: balance;
+        line-height: 4rem * 1.2;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin-bottom: 16px;
+        font-size: 1.25rem;
+        line-height: 1.25rem * 1.6;
+        max-width: 550px;
+      }
+    }
+
+    .buttons-container {
+      margin-top: 32px;
+      z-index: 10;
+
+      button.docs {
+        &:hover {
+          mat-icon {
+            color: v.$text-dark-800;
+          }
+        }
+      }
+    }
+  }
+}

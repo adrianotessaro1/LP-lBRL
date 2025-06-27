@@ -1,0 +1,49 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  width: 100%;
+  height: 100%;
+
+  section {
+    padding: 60px 80px;
+    justify-content: space-between;
+
+    .left-container {
+      flex: 1 1 50%;
+
+      h2 {
+        margin-bottom: v.$space-xl;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 200px;
+          height: 3px;
+          top: -(v.$space-s);
+          background: linear-gradient(
+            135deg,
+            v.$primary-500 0%,
+            v.$color-bg-main 100%
+          );
+        }
+      }
+
+      span {
+        font-size: v.$font-m;
+      }
+
+      mat-icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .right-container {
+      flex: 1 1 45%;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

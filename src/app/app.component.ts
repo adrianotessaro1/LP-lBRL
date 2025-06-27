@@ -9,6 +9,8 @@ import { ProofOfReservesComponent } from './components/proof-of-reserves/proof-o
 import { UseCasesComponent } from './components/use-cases/use-cases.component';
 import { WhitelabelComponent } from './components/whitelabel/whitelabel.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -29,4 +31,31 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'LP-tBRL';
+
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'squares',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/squares.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'right_arrow',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/right_arrow.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'down_arrow',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/down_arrow.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'one_circle',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/one_circle.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'two_circle',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/two_circle.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'three_circle',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/three_circle.svg')
+    );
+  }
 }

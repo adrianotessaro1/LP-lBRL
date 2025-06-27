@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "./app-theme" as theme;
+@use "./variables" as v;
 
 // Layout and Alignment
 .limited {
@@ -8,16 +8,20 @@
 }
 
 .main-bg {
-  background: map.get(theme.$app-secondary, 900);
+  background: v.$color-bg-main;
 }
 
 .secondary-bg {
-  background: map.get(theme.$app-secondary, 800);
+  background: #191a19;
 }
 
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.inline {
+  display: flex;
 }
 
 .centered {
@@ -35,30 +39,65 @@
   flex: 1;
 }
 
-.gap-10 {
-  gap: 10px;
+.gap-xxs {
+  gap: v.$space-xxs;
 }
-
-.gap-20 {
-  gap: 20px;
+.gap-xs {
+  gap: v.$space-xs;
 }
-
-.gap-30 {
-  gap: 30px;
+.gap-s {
+  gap: v.$space-s;
+}
+.gap-m {
+  gap: v.$space-m;
+}
+.gap-l {
+  gap: v.$space-l;
+}
+.gap-xl {
+  gap: v.$space-xl;
+}
+.gap-xxl {
+  gap: v.$space-xxl;
 }
 
 // Typography
-.fs-49 {
-  font-size: 49px;
-}
 
-.fs-30 {
-  font-size: 30px;
-}
+.fs-xxs {
+  font-size: v.$font-xxs;
+} // 0.75rem
 
-.fs-20 {
-  font-size: 20px;
-}
+.fs-xs {
+  font-size: v.$font-xs;
+} // 0.875rem
+
+.fs-s {
+  font-size: v.$font-s;
+} // 1rem
+
+.fs-m {
+  font-size: v.$font-m;
+} // 1.25rem
+
+.fs-l {
+  font-size: v.$font-l;
+} // 1.5rem
+
+.fs-xl {
+  font-size: v.$font-xl;
+} // 2rem
+
+.fs-xsl {
+  font-size: v.$font-xsl;
+} // 2.5rem
+
+.fs-xxl {
+  font-size: v.$font-xxl;
+} // 3rem
+
+.fs-xxxl {
+  font-size: v.$font-xxxl;
+} // 4rem
 
 .fw-600 {
   font-weight: 600;
@@ -78,8 +117,8 @@
 
 // Buttons and Actions
 .btn {
-  color: var(--main-text) !important;
-  border-radius: 6px;
+  color: v.$color-text-main !important;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,19 +127,46 @@
   cursor: pointer;
   gap: 10px;
   min-width: 125px;
+  position: relative;
+
+  // medium (default)
+  font-size: 1rem;
+  padding: 12px 50px 12px 20px;
+  height: 48px;
+
+  mat-icon {
+    position: absolute;
+    min-width: 20px;
+    width: 20px;
+    color: v.$color-text-main;
+    top: 12px;
+    right: 20px;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
 
   &.primary {
-    background-color: var(--primary-color);
-    &:hover {
-      box-shadow: 0 0 8px var(--primary-color);
+    background-color: v.$primary-900;
+    &:hover:not(:disabled) {
+      box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 30px rgba(166, 173, 201, 0.2);
     }
   }
 
   &.secondary {
-    background-color: var(--secondary-color);
-    color: var(--main-text) !important;
-    &:hover {
-      background-color: var(--primary-color);
+    background-color: transparent;
+    transition: 0.25s ease;
+    border: v.$secondary-400 1px solid;
+
+    &:hover:not(:disabled) {
+      border: none;
+      background-color: v.$secondary-500;
+      color: v.$text-dark-800 !important;
+      box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 30px rgba(166, 173, 201, 0.2);
     }
   }
 }
@@ -205,4 +271,9 @@
   @media (max-width: 768px) {
     flex-direction: column;
   }
+}
+
+mat-icon {
+  width: 24px;
+  height: 24px;
 }

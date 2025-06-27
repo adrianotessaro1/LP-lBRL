@@ -1,26 +1,56 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
 :host {
   width: 100%;
-  flex: 1;
+  display: block;
 
   header.header {
     position: sticky;
-    top: 0;
+    top: 60px;
+    left: 80px;
+    right: 80px;
+    height: v.$header-height;
     z-index: 10000;
-    padding: 40px;
+
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 
     img {
-      height: 40px;
+      height: 32px;
       width: auto;
     }
 
     a {
-      color: var(--main-text);
+      color: v.$text-dark-500;
       text-decoration: none;
-      transform: color 0.3 ease;
+      position: relative;
+      transition: color 0.2s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: v.$primary-900;
+        height: 2px;
+        width: 100%;
+        bottom: -8px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.25s linear;
+      }
 
       &:hover {
-        color: var(--primary-color);
+        color: v.$color-text-main;
       }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &.scrolled {
+    header.header {
+      background-color: rgba(v.$color-bg-main, 1);
     }
   }
 }

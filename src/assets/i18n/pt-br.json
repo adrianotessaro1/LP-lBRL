@@ -9,7 +9,7 @@
     "faq": "Perguntas",
     "finalCTA": "Começar"
   },
-  "headline": "Entre e saia do Brasil em segundos.",
+  "headline": "Entre e saia do Brasil em segundos",
   "subHeadline": "O tBRL é a stablecoin 100% lastreada em real que conecta o Pix à Web3, liberando liquidez instantânea para exchanges, fintechs, bancos digitais e corporações globais.",
   "startIntegration": "Começar Integração",
   "whitepaper": "Whitepaper (PDF)",
@@ -17,9 +17,21 @@
 
   "howItWorks": {
     "title": "Como o tBRL Funciona",
-    "onRamp": "Pix-IN",
-    "offRamp": "Pix-OUT",
-    "crossBorder": "Cross-Border"
+    "sideTitle": "Integração EVM ready",
+    "onRamp": {
+      "step1": "Pix-IN",
+      "step2": "mint()",
+      "step3": "tBRL creditado"
+    },
+    "offRamp": {
+      "step1": "Pix-OUT",
+      "step2": "burn()",
+      "step3": "BRL na conta"
+    },
+    "crossBorder": {
+      "step1": "Direto Pix",
+      "step2": "USDT com spread a partir de +0,6%"
+    }
   },
 
   "proofOfReserves": {

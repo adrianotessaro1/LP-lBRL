@@ -1,1 +1,30 @@
-<section class="wth-100 centered" id="api-first"></section>
+<section class="wth-100 centered column gap-xxl" id="api-first">
+    <div class="top-container centered column">
+        <div class="container">
+            <span class="typewriter fs-s">API FIRST</span>
+        </div>
+        <h2 class="title">{{'apiFirst.title' | translate}}</h2>
+        <p class="subtitle fs-m">{{'apiFirst.subTitle' | translate}}</p>
+    </div>
+    <div class="main-content">
+        <div class="code">
+            <img src="/assets/images/code_snippet.png" alt="Code Snippet">
+        </div>
+        <div class="bullets column gap-l">
+            <div class="inline align-center gap-s">
+                <mat-icon svgIcon="squares" class="icon"></mat-icon>
+                <span class="fs-m">{{ 'apiFirst.latency' | translate }}</span>
+            </div>
+            <div class="inline align-center gap-s">
+                <mat-icon svgIcon="squares" class="icon"></mat-icon>
+                <span class="fs-m">{{'apiFirst.freeSandbox' | translate}}</span>
+            </div>
+            <div class="inline align-center gap-s">
+                <mat-icon svgIcon="squares" class="icon"></mat-icon>
+                <span class="fs-m">{{'apiFirst.webhooks' | translate}}</span>
+            </div>
+            <button class="btn docs secondary">{{'apiFirst.viewDocs' | translate}}
+                <mat-icon>description</mat-icon></button>
+        </div>
+    </div>
+</section>
