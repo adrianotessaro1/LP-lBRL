@@ -27,8 +27,6 @@
 
     .main {
       h2 {
-        position: relative;
-
         &::before {
           position: absolute;
           content: "";
@@ -37,7 +35,7 @@
           top: -(v.$space-s);
           background: linear-gradient(
             135deg,
-            v.$primary-500 0%,
+            v.$primary-700 0%,
             v.$color-bg-main 100%
           );
         }
@@ -56,8 +54,8 @@
           border-radius: 12px;
 
           .image-container {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
 
             img {
               width: 100%;

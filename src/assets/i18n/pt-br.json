@@ -54,7 +54,7 @@
   "whitelabel": {
     "title": "Sua marca, nosso motor de liquidez.",
     "paragraph": "Lance sua própria stablecoin em real — com seu logo, cor de marca e domínio — sobre a reserva segregada do tBRL. Ideal para bancos digitais, marketplaces de cripto e programas de fidelidade que precisam de BRL on-chain sem montar a infraestrutura do zero.",
-    "secondaryCall": "Fale com nosso time de soluções enterprise."
+    "secondaryCall": "Fale com nosso time de soluções enterprise"
   },
 
   "useCases": {
@@ -62,18 +62,31 @@
     "exchange": "Exchanges Globais",
     "fintech": "Fintechs de Pagamento",
     "rwaManagers": "Gestores de RWA",
-    "remittance": "Empresas de Remessa"
+    "remittance": "Empresas de Remessa",
+    "exchange.details": "On-ramp Pix sem licença local, liquidez BRL ↔ USDT em minutos.",
+    "fintech.details": "Liquidar boletos, TEDs e Pix dentro de uma camada programável.",
+    "rwaManagers.details": "Distribua rendimentos de precatórios, imóveis ou agro em tBRL.",
+    "remittance.details": "Reduza custos cross-border usando stablecoin nativa do Brasil."
   },
 
   "faq": {
-    "isTBRLRegulated": "O tBRL é regulado pelo Bacen?",
-    "sla": "Qual o SLA de resgate?",
-    "mintingCap": "Existe limite de emissão?",
-    "kyc": "Posso integrar sem KYC?",
-    "contract": "Onde vejo o contrato?",
-    "proofOfReserves": "Onde vejo a prova de reservas?",
+    "title": "Perguntas Frequentes",
+    "isTBRLRegulatedByBacen": "O tBRL é regulado pelo Bacen?",
+    "isTBRLRegulatedByBacenAnswer": "O token opera sob o modelo de dinheiro eletrônico lastreado; seguimos a Resolução CVM 88 e as diretrizes do Bacen e seremos pioneiros no cumprimento de quaisquer novas normas.",
+    "whatIsRedemptionSLA": "Qual é o SLA de resgate?",
+    "whatIsRedemptionSLAAnswer": "Pix 24×7 com latência média de 3 segundos.",
+    "isThereAMintingCap": "Existe um limite de cunhagem?",
+    "isThereAMintingCapAnswer": "Não — desde que haja 100 % de BRL mantidos na conta de reserva.",
+    "canIIntegrateWithoutKYC": "Posso integrar sem KYC?",
+    "canIIntegrateWithoutKYCAnswer": "Para volumes < R$ 5 k/dia usamos KYC simplificado; acima disso aplicamos KYC/KYB completo.",
+    "whereIsTheContract": "Onde está o contrato?",
+    "whereIsTheContractAnswer": "Moonbeam Explorer: https://moonscan.io/token/0x513E5739AE60B29ac2B33Bfcf0E07F0D079DbDBB",
+    "whereDoISeeProofOfReserves": "Onde posso ver a prova de reservas?",
+    "whereDoISeeProofOfReservesAnswer": "No site da Fact Finance, nosso parceiro de auditoria de saldos: https://reserve.fact.finance/tokeniza",
     "howDoesKYCWork": "Como funciona o KYC?",
-    "access": "Como são feitos os acessos?"
+    "howDoesKYCWorkAnswer": "Verificação automatizada de identidade, selfie e liveness — também acessível via API.",
+    "howDoIAccessTheServices": "Como acesso os serviços?",
+    "howDoIAccessTheServicesAnswer": "Integração de API simples. Veja a documentação em https://..."
   },
 
   "finalCTA": {

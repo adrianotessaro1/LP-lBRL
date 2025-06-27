@@ -54,7 +54,7 @@
   "whitelabel": {
     "title": "Your brand, our liquidity engine.",
     "paragraph": "Launch your own BRL-denominated stablecoin—complete with your logo, brand colors, and domain—on top of tBRL’s segregated reserve. Perfect for digital banks, crypto marketplaces, and loyalty programs that need BRL on-chain without building infrastructure from scratch.",
-    "secondaryCall": "Talk to our Enterprise Solutions team."
+    "secondaryCall": "Talk to our Enterprise Solutions team"
   },
 
   "useCases": {
@@ -62,18 +62,31 @@
     "exchange": "Global Exchanges",
     "fintech": "Payment Fintechs",
     "rwaManagers": "RWA Managers",
-    "remittance": "Remittance Companies"
+    "remittance": "Remittance Companies",
+    "exchange.details": "Pix on-ramp without a local license, BRL ↔ USDT liquidity in minutes.",
+    "fintech.details": "Settle boletos, TEDs, and Pix inside a programmable layer.",
+    "rwaManagers.details": "Distribute yields from precatórios, real estate, or agribusiness in tBRL.",
+    "remittance.details": "Cut cross-border costs using Brazil’s native stablecoin."
   },
 
   "faq": {
-    "isTBRLRegulated": "Is tBRL regulated by Bacen?",
-    "sla": "What is the redemption SLA?",
-    "mintingCap": "Is there a minting cap?",
-    "kyc": "Can I integrate without KYC?",
-    "contract": "Where is the contract?",
-    "proofOfReserves": "Where do I see the proof of reserves?",
+    "title": "Frequently Asked Questions",
+    "isTBRLRegulatedByBacen": "Is tBRL regulated by Bacen?",
+    "isTBRLRegulatedByBacenAnswer": "The token operates under the backed-e-money model; we follow CVM Resolution 88 and Bacen guidelines and will pioneer compliance with any new rules.",
+    "whatIsRedemptionSLA": "What is the redemption SLA?",
+    "whatIsRedemptionSLAAnswer": "Pix 24 × 7 with average latency of 3 seconds.",
+    "isThereAMintingCap": "Is there a minting cap?",
+    "isThereAMintingCapAnswer": "No—as long as there is 100 % BRL held in the reserve account.",
+    "canIIntegrateWithoutKYC": "Can I integrate without KYC?",
+    "canIIntegrateWithoutKYCAnswer": "For volumes < R$ 5 k/day we use simplified KYC; above that we apply full KYC/KYB.",
+    "whereIsTheContract": "Where is the contract?",
+    "whereIsTheContractAnswer": "Moonbeam Explorer: https://moonscan.io/token/0x513E5739AE60B29ac2B33Bfcf0E07F0D079DbDBB",
+    "whereDoISeeProofOfReserves": "Where do I see the proof of reserves?",
+    "whereDoISeeProofOfReservesAnswer": "On Fact Finance’s site, our balance-auditing partner: https://reserve.fact.finance/tokeniza",
     "howDoesKYCWork": "How does KYC work?",
-    "access": "How do I access the services?"
+    "howDoesKYCWorkAnswer": "Automated ID, selfie, and liveness check—also accessible via API.",
+    "howDoIAccessTheServices": "How do I access the services?",
+    "howDoIAccessTheServicesAnswer": "Simple API integration. See the docs at https://..."
   },
 
   "finalCTA": {

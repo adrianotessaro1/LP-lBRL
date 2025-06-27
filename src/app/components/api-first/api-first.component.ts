@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
+import Prism from 'prismjs';
 
 @Component({
   selector: 'app-api-first',
@@ -9,4 +10,8 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './api-first.component.html',
   styleUrl: './api-first.component.scss',
 })
-export class ApiFirstComponent {}
+export class ApiFirstComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    Prism.highlightAll();
+  }
+}

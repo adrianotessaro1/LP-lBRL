@@ -1,1 +1,68 @@
 @use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  section {
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-xl;
+
+    .first-container {
+      height: 100%;
+      gap: 2 * v.$space-xxl;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        &::before {
+          position: absolute;
+          content: "";
+          width: 200px;
+          height: 3px;
+          top: -(v.$space-s);
+          background: linear-gradient(
+            135deg,
+            v.$primary-700 0%,
+            v.$color-bg-main 100%
+          );
+        }
+      }
+
+      .image-container {
+        width: 600px;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          border: v.$text-light-400 3px solid;
+        }
+      }
+    }
+    .second-container {
+      margin-top: v.$space-xxl;
+      .card {
+        background-color: #000000;
+        padding: v.$space-m;
+        border-radius: v.$space-xs;
+        .inline {
+          align-items: center;
+          span {
+            width: 2px;
+            height: 60%;
+            background-color: v.$primary-700;
+            margin-right: v.$space-s;
+          }
+        }
+
+        p {
+          line-height: 1rem * v.$line-height-l;
+        }
+      }
+
+      .first-column {
+        margin-top: v.$space-xxl;
+      }
+    }
+  }
+}

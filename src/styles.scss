@@ -2,6 +2,8 @@
 @use "./assets/styles/common-classes.scss";
 @use "./assets/styles/mixinn.scss";
 @use "./assets/styles/variables.scss" as v;
+@import "prismjs/themes/prism-okaidia.css";
+@import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 html,
 body {
@@ -13,7 +15,7 @@ body {
   color: v.$color-text-main;
   cursor: default;
   font-family: Roboto, "Inter", sans-serif;
-  background-color: #000805;
+  background-color: v.$color-bg-main;
   position: relative;
 }
 
@@ -36,17 +38,6 @@ h2 {
   font-weight: 600;
   position: relative;
   color: v.$primary-800;
-
-  /*&::after {
-    content: "";
-    position: absolute;
-    background-color: v.$primary-900;
-    border-radius: 3px;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    bottom: -6px;
-  } */
 }
 
 h3 {

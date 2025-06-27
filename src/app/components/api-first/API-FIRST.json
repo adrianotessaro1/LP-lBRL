@@ -1,9 +1,0 @@
-POST /v1/mint
-{
-  "pixKey": "empresa@banco.com.br",
-  "amount": "1_000.00"
-}
-
-
-
-

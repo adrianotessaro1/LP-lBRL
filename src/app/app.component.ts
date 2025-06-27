@@ -42,8 +42,18 @@ export class AppComponent {
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/right_arrow.svg')
     );
     iconRegistry.addSvgIcon(
+      'right_arrow_yellow',
+      sanitizer.bypassSecurityTrustResourceUrl(
+        '/assets/icons/right_arrow_yellow.svg'
+      )
+    );
+    iconRegistry.addSvgIcon(
       'down_arrow',
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/down_arrow.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'faq_arrow',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/faq_arrow.svg')
     );
     iconRegistry.addSvgIcon(
       'one_circle',

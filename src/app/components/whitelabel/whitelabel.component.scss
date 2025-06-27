@@ -1,1 +1,60 @@
 @use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  width: 100%;
+
+  section {
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    position: relative;
+    align-items: center;
+
+    .info-container {
+      justify-content: flex-start;
+
+      h2 {
+        margin-bottom: v.$space-m;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 200px;
+          height: 3px;
+          top: -(v.$space-s);
+          background: linear-gradient(
+            135deg,
+            v.$primary-700 0%,
+            v.$color-bg-main 100%
+          );
+        }
+      }
+
+      .subtitle {
+        margin-bottom: v.$space-l;
+        font-size: 1.25rem;
+        line-height: 1.25 * 1.6;
+        max-width: 610px;
+      }
+
+      .secondary-call {
+        display: flex;
+        font-size: 1.25rem;
+        align-items: center;
+        color: v.$secondary-400;
+        cursor: pointer;
+
+        mat-icon {
+          margin-left: v.$space-xs;
+        }
+      }
+    }
+
+    .image-container {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

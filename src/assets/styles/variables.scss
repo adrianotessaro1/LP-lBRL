@@ -88,10 +88,12 @@ $secondary-900: map.get($app-secondary, 900);
 // — Accent maps
 $app-warning: #ff0f0f;
 $app-red: #d83333;
+$app-yellow: #e5c30c;
+$app-green: #34c840;
 
 // — Text & background
 $color-text-main: $text-light-100;
-$color-bg-main: #000805;
+$color-bg-main: #020f0a;
 $color-bg-secondary: #282828;
 
 // — Spacing & radii (example tokens)
@@ -117,8 +119,9 @@ $font-xxxl: 4rem; // 64px
 // --------------------------------------------------
 // Spacing scale
 // --------------------------------------------------
-$space-xxs: 4px;
-$space-xs: 8px;
+$space-xxxs: 4px;
+$space-xxs: 8px;
+$space-xs: 12px;
 $space-s: 16px;
 $space-m: 24px;
 $space-l: 32px;

@@ -1,1 +1,18 @@
-<section class="wth-100 centered" id="faq"></section>
+<section class="wth-100 centered column gap-l" id="faq">
+    <div class="top-container">
+        <h2>{{'faq.title' | translate}}</h2>
+    </div>
+    <ul>
+        <div class="element" *ngFor="let question of questions; let i = index">
+            <div class="question" [ngStyle]="{ background: question.background }" (click)="toggleAnswer(i)">
+                <mat-icon svgIcon="faq_arrow" [ngClass]="{ rotate: question.open }"></mat-icon>
+                <a [ngStyle]="{ color: question.color }">{{ `faq.${question.name}` | translate }}</a>
+            </div>
+            <div class="answer" [ngClass]="{ open: question.open }">
+                <p>
+                    {{ `faq.${question.answer}` | translate }}
+                </p>
+            </div>
+        </div>
+    </ul>
+</section>

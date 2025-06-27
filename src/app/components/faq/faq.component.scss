@@ -1,0 +1,79 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  section {
+    padding: 60px 80px;
+
+    .top-container {
+      margin-bottom: v.$space-l;
+      h2 {
+        &::before {
+          content: "FAQ";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: 600;
+          line-height: 136px;
+          font-size: 136px;
+          background: linear-gradient(180deg, #62bd0094, #a67e3a1c 50%);
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .element {
+      width: 780px;
+      margin-bottom: v.$space-xs;
+
+      .question {
+        display: flex;
+        align-items: center;
+        height: 54px;
+        border-radius: 12px;
+        cursor: pointer;
+        outline: none;
+        padding: v.$space-s;
+        line-height: 1;
+        border: v.$secondary-400 1px solid;
+
+        a {
+          font-size: v.$space-m;
+          line-height: v.$space-m * v.$line-height-m;
+          text-decoration: none;
+        }
+
+        mat-icon {
+          margin-right: v.$space-s;
+          transform: rotate(0deg);
+
+          &.rotate {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .answer {
+        font-size: v.$font-m;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        border-width: 0;
+        background-color: v.$color-bg-secondary;
+        border-radius: 12px;
+        line-height: v.$font-m * 1.6;
+        padding: 0 24px;
+        margin-top: v.$space-xs;
+        transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+
+        &.open {
+          opacity: 1;
+          padding: 24px;
+          max-height: 140px;
+        }
+      }
+    }
+  }
+}

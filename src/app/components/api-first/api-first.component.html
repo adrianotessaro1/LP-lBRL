@@ -7,8 +7,28 @@
         <p class="subtitle fs-m">{{'apiFirst.subTitle' | translate}}</p>
     </div>
     <div class="main-content">
-        <div class="code">
-            <img src="/assets/images/code_snippet.png" alt="Code Snippet">
+        <div class="code-block column">
+            <!-- 1) Header with the red/yellow/green dots -->
+            <div class="code-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <!-- 2) Code body -->
+            <div class="code-body">
+                <pre class="line-numbers language-js">
+                    <code>
+POST /v1/mint 
+&#123;
+    "pixKey": "empresa&#64;banco.com.br",           
+    "amount": "1_000.00"
+&#125;
+
+
+
+                    </code>
+                </pre>
+            </div>
         </div>
         <div class="bullets column gap-l">
             <div class="inline align-center gap-s">

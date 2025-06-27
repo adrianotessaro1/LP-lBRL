@@ -6,6 +6,21 @@
 
   section {
     padding: 60px 80px;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: url("/assets/images/green_effect.png") center/cover no-repeat;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 1;
+    }
 
     .top-container {
       .container {
@@ -13,7 +28,7 @@
         margin-bottom: v.$space-xs;
 
         .typewriter {
-          font: monospace;
+          font-family: monospace;
           letter-spacing: 3px;
           border-right: 2px solid;
           width: 100%;
@@ -42,29 +57,68 @@
 
     .main-content {
       display: grid;
-      grid-template-columns: minmax(300px, 600px) 1fr;
+      grid-template-columns: minmax(300px, 500px) 1fr;
+      column-gap: v.$space-xl;
       justify-content: flex-start;
-      column-gap: 2rem;
       align-items: flex-start;
 
-      .code {
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #2f2f2f;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      .code-block {
+        overflow: hidden;
+        border-radius: 12px;
+        background: v.$color-bg-secondary;
+        box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+          0 10px 20px rgba(166, 173, 201, 0.2);
+        justify-content: flex-start;
+        position: relative;
 
-        img {
-          width: 100%;
-          height: auto;
-          object-fit: contain;
-          border-radius: 16px;
+        .code-header {
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: v.$space-xs v.$space-s;
+          display: flex;
+          gap: v.$space-xxs;
+
+          .dot {
+            width: v.$space-xs;
+            height: v.$space-xs;
+            border-radius: 50%;
+
+            &.red {
+              background-color: v.$app-red;
+            }
+
+            &.green {
+              background-color: v.$app-green;
+            }
+
+            &.yellow {
+              background-color: v.$app-yellow;
+            }
+          }
+        }
+
+        .code-body {
+          pre[class*="language-"].line-numbers {
+            margin: 0;
+            font-family: "Fira Code", monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #cdd6f4;
+            position: relative; /* required for Prism’s gutter */
+            width: 100%; /* make it span the full card width */
+
+            code {
+              display: block; /* kill inline whitespace issues */
+              width: 100%;
+            }
+          }
         }
       }
 
       .bullets {
+        mat-icon.icon {
+          width: 28px;
+          height: 28px;
+        }
         button {
           width: fit-content;
 
