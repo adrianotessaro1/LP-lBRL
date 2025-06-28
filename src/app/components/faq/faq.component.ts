@@ -15,28 +15,28 @@ export class FaqComponent {
       name: 'isTBRLRegulatedByBacen',
       answer: 'isTBRLRegulatedByBacenAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
       name: 'whatIsRedemptionSLA',
       answer: 'whatIsRedemptionSLAAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
       name: 'isThereAMintingCap',
       answer: 'isThereAMintingCapAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
       name: 'canIIntegrateWithoutKYC',
       answer: 'canIIntegrateWithoutKYCAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
@@ -44,7 +44,7 @@ export class FaqComponent {
       answer:
         'whereIsTheContractAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
@@ -52,7 +52,7 @@ export class FaqComponent {
       answer:
         'whereDoISeeProofOfReservesAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
@@ -60,7 +60,7 @@ export class FaqComponent {
       answer:
         'howDoesKYCWorkAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
     {
@@ -68,7 +68,7 @@ export class FaqComponent {
       answer:
         'howDoIAccessTheServicesAnswer',
       open: false,
-      background: 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)',
+      background: 'linear-gradient(135deg, #005500 0%, #020f0a 100%)',
       color: '#e9ecef',
     },
   ];
@@ -77,9 +77,9 @@ export class FaqComponent {
     this.questions[index].open = !this.questions[index].open;
     this.questions[index].background =
       this.questions[index].background ===
-      'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)'
+      'linear-gradient(135deg, #005500 0%, #020f0a 100%)'
         ? '#121212'
-        : 'linear-gradient(135deg, #61bd00 0%, #020f0a 100%)';
+        : 'linear-gradient(135deg, #005500 0%, #020f0a 100%)';
     this.questions[index].color =
       this.questions[index].color === '#e9ecef' ? '#48a900' : '#e9ecef';
   }

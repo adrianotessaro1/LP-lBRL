@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-final-cta',
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, MatIconModule],
   templateUrl: './final-cta.component.html',
-  styleUrl: './final-cta.component.scss'
+  styleUrl: './final-cta.component.scss',
 })
-export class FinalCtaComponent {
-
-}
+export class FinalCtaComponent {}

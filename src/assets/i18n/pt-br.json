@@ -105,12 +105,8 @@
       "amlPolicy": "Política AML/KYC"
     },
     "newsletter": "Receba atualizações mensais sobre liquidez BRL on-chain.",
-    "subscribe": "Inscrever-se",
-    "social": {
-      "x": "X",
-      "linkedin": "LinkedIn",
-      "telegram": "Telegram"
-    },
-    "copyright": "© 2025 tBRL LTDA | CNPJ XX.XXX.XXX/0001-XX"
-  }
+    "subscribe": "Inscrever-se"
+  },
+
+  "placeholder.email": "Entre o seu email..."
 }

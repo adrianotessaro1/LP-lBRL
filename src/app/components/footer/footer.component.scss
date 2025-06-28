@@ -1,0 +1,92 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  section {
+    padding: 60px 0px;
+    width: 100%;
+
+    .container {
+      padding: 0 80px;
+      z-index: 10000;
+      width: 100%;
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+
+      .links {
+        a {
+          text-decoration: none;
+          color: v.$text-dark-600;
+          font-size: v.$font-m;
+        }
+      }
+
+      .social-media {
+        margin-top: v.$space-m;
+
+        mat-icon {
+          cursor: pointer;
+        }
+      }
+
+      .newsletter {
+        margin-top: v.$space-l;
+        form {
+          input {
+            min-width: 480px;
+          }
+          span.error-hint {
+            position: absolute;
+            bottom: -22px;
+            right: 2px;
+            font-size: 12px;
+            line-height: 24px;
+            color: v.$app-red;
+          }
+
+          button {
+            mat-icon {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .divider {
+        width: 100%;
+        background-color: v.$off-white-darker;
+        height: 2px;
+        margin-top: v.$space-m;
+      }
+
+      .rights {
+        margin-top: v.$space-m;
+      }
+    }
+  }
+}
+
+.input-fill-default:hover:not(.ng-invalid) {
+  border: 1px solid v.$primary-800;
+}
+
+.input-fill-default {
+  background: v.$color-bg-secondary;
+  border-radius: 12px;
+  height: 100%;
+  color: v.$color-text-main;
+  font-size: v.$font-s;
+  padding: 10px 14px;
+  height: 48px;
+
+  &.ng-invalid.ng-touched:not(:read-only):not(:disabled),
+  &.mat-datepicker-input.ng-invalid.ng-touched:not(:read-only):not(:disabled) {
+    border-color: v.$app-red;
+  }
+}
+
+.input-fill-default:hover {
+  border: 1px solid v.$primary-800;
+}

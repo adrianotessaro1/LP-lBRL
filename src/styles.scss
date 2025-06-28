@@ -32,6 +32,13 @@ html {
   scroll-behavior: smooth;
 }
 
+h1 {
+  font-size: 4rem;
+  text-wrap: balance;
+  line-height: 4rem * 1.2;
+  letter-spacing: -0.01em;
+}
+
 h2 {
   font-size: v.$font-xsl;
   line-height: v.$font-xsl * v.$line-height-s;

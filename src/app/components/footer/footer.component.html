@@ -1,1 +1,47 @@
-<section class="wth-100 centered" id="footer"></section>
+<section class="wth-100 centered" id="footer">
+    <div class="container column">
+        <div class="between inline align-center">
+            <img src="/assets/images/logo.png" alt="tBRL Logo">
+            <div class="links inline gap-l">
+                <a href="" class="link">{{'footer.links.whitepaper' | translate}}</a>
+                <a href="" class="link">{{'footer.links.proofOfReserves' | translate}}</a>
+                <a href="" class="link">{{'footer.links.apiDocs' | translate}}</a>
+                <a href="" class="link">{{'footer.links.termsOfUse' | translate}}</a>
+                <a href="" class="link">{{'footer.links.amlPolicy' | translate}}</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <div class="inline gap-m">
+                <mat-icon svgIcon="telegram_logo"></mat-icon>
+                <mat-icon svgIcon="x_logo"></mat-icon>
+                <mat-icon svgIcon="linkedin_logo"></mat-icon>
+            </div>
+        </div>
+        <div class="newsletter inline gap-m align-center between">
+            <div class="text column gap-xs">
+                <h3>Newsletter</h3>
+                {{'footer.newsletter' | translate}}
+            </div>
+            <form class="input-field inline gap-m" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+                <input class="input-fill-default" matInput placeholder="{{'placeholder.email' | translate}}"
+                    formControlName="email" required />
+                <span class="error-hint">
+                    <ng-container
+                        *ngIf="showError('emailForm', emailForm) && emailForm.get('monthly_amount')?.hasError('required')">
+                        {{ 'errorHint.mandatory' | translate }}
+                    </ng-container>
+                </span>
+                <div class="column">
+                    <button class="btn secondary" [disabled]="emailForm.invalid">
+                        {{'footer.subscribe' | translate}}
+                        <mat-icon>forward_to_inbox</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <span class="divider"></span>
+        <div class="rights">
+            © 2025 tBRL LTDA | CNPJ XX.XXX.XXX/0001-XX
+        </div>
+    </div>
+</section>

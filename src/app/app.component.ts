@@ -67,5 +67,21 @@ export class AppComponent {
       'three_circle',
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/three_circle.svg')
     );
+    iconRegistry.addSvgIcon(
+      'telegram_logo',
+      sanitizer.bypassSecurityTrustResourceUrl(
+        '/assets/icons/telegram_logo.svg'
+      )
+    );
+    iconRegistry.addSvgIcon(
+      'x_logo',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/x_logo.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'linkedin_logo',
+      sanitizer.bypassSecurityTrustResourceUrl(
+        '/assets/icons/linkedin_logo.svg'
+      )
+    );
   }
 }

@@ -5,7 +5,7 @@
     padding: 60px 80px;
 
     .top-container {
-      margin-bottom: v.$space-l;
+      margin-bottom: v.$space-xl;
       h2 {
         &::before {
           content: "FAQ";
@@ -37,7 +37,7 @@
         outline: none;
         padding: v.$space-s;
         line-height: 1;
-        border: v.$secondary-400 1px solid;
+        border: v.$text-light-400 1px solid;
 
         a {
           font-size: v.$space-m;

@@ -1,0 +1,43 @@
+@use "./../../../assets/styles/variables.scss" as v;
+
+:host {
+  section {
+    padding: 60px 80px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: url("/assets/images/green_effect.png") center/cover no-repeat;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container {
+      background-color: #28282858;
+      padding: v.$space-xxl;
+      border-radius: v.$space-m;
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        font-size: v.$font-m;
+        line-height: v.$font-m * 1.6;
+      }
+
+      button {
+        padding: 12px 54px 12px 20px;
+        mat-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
