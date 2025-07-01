@@ -4,6 +4,7 @@
   section {
     padding: 60px 0px;
     width: 100%;
+    background-color: v.$color-bg-secondary;
 
     .container {
       padding: 0 80px;
@@ -18,8 +19,13 @@
       .links {
         a {
           text-decoration: none;
-          color: v.$text-dark-600;
+          color: v.$text-dark-500;
           font-size: v.$font-m;
+          transition: color 0.15s ease;
+
+          &:hover {
+            color: v.$color-text-main;
+          }
         }
       }
 
@@ -37,6 +43,7 @@
           input {
             min-width: 480px;
           }
+          
           span.error-hint {
             position: absolute;
             bottom: -22px;
@@ -46,9 +53,13 @@
             color: v.$app-red;
           }
 
-          button {
-            mat-icon {
-              margin-right: 4px;
+          .subscribe {
+            padding: 12px 60px 12px 20px !important;
+
+            &:hover {
+              mat-icon {
+                color: v.$text-dark-800;
+              }
             }
           }
         }
@@ -68,25 +79,4 @@
   }
 }
 
-.input-fill-default:hover:not(.ng-invalid) {
-  border: 1px solid v.$primary-800;
-}
 
-.input-fill-default {
-  background: v.$color-bg-secondary;
-  border-radius: 12px;
-  height: 100%;
-  color: v.$color-text-main;
-  font-size: v.$font-s;
-  padding: 10px 14px;
-  height: 48px;
-
-  &.ng-invalid.ng-touched:not(:read-only):not(:disabled),
-  &.mat-datepicker-input.ng-invalid.ng-touched:not(:read-only):not(:disabled) {
-    border-color: v.$app-red;
-  }
-}
-
-.input-fill-default:hover {
-  border: 1px solid v.$primary-800;
-}

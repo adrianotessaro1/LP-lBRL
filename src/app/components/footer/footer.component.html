@@ -23,7 +23,7 @@
                 {{'footer.newsletter' | translate}}
             </div>
             <form class="input-field inline gap-m" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
-                <input class="input-fill-default" matInput placeholder="{{'placeholder.email' | translate}}"
+                <input matInput class="input-fill-default" matInput placeholder="{{'placeholder.email' | translate}}"
                     formControlName="email" required />
                 <span class="error-hint">
                     <ng-container
@@ -32,7 +32,7 @@
                     </ng-container>
                 </span>
                 <div class="column">
-                    <button class="btn secondary" [disabled]="emailForm.invalid">
+                    <button class="btn secondary subscribe" [disabled]="emailForm.invalid">
                         {{'footer.subscribe' | translate}}
                         <mat-icon>forward_to_inbox</mat-icon>
                     </button>

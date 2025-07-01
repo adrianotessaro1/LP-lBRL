@@ -52,3 +52,23 @@ h3 {
   line-height: 1.75rem * 1.6;
   font-weight: 600;
 }
+
+.input-fill-default {
+  background: v.$color-bg-secondary;
+  border-radius: 12px;
+  height: 100%;
+  color: v.$color-text-main;
+  font-size: v.$font-s;
+  padding: 10px 14px;
+  height: 48px;
+  position: relative;
+
+  &.ng-invalid.ng-touched:not(:read-only):not(:disabled),
+  &.mat-datepicker-input.ng-invalid.ng-touched:not(:read-only):not(:disabled) {
+    border-color: v.$app-red;
+  }
+}
+
+.input-fill-default:hover {
+  border: 1px solid v.$primary-800;
+}

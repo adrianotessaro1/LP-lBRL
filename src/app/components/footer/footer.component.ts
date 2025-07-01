@@ -9,10 +9,17 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslateModule, CommonModule, MatIconModule, ReactiveFormsModule],
+  imports: [
+    TranslateModule,
+    CommonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatInputModule,
+  ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

@@ -1,6 +1,6 @@
-<header class="header centered inline between">
+<header class="header centered inline between padding-20 secondary-bg" [ngClass]="{scrolled: isScrolled}">
     <div class="logo">
-        <img src="/assets/images/logo.png" alt="tBRL Logo" class="to-point">
+        <img src="/assets/images/logo.png" alt="tBRL Logo">
     </div>
     <nav class="inline gap-xl">
         <a href="#how-it-works" class="to-point">{{'sections.howItWorks' | translate}}</a>
@@ -10,4 +10,21 @@
         <a href="#faq" class="to-point">{{'sections.faq' | translate}}</a>
         <a href="#final-cta" class="to-point">{{'sections.finalCTA' | translate}}</a>
     </nav>
+    <div class="dropdown">
+        <div class="select" [ngClass]="{'select-clicked': viewOptions }" (click)="toggleDropdownMenu()">
+            <div class="option-selected">
+                <img [src]="selectedCountry.image" alt="Brazil Flag" class="flag">
+                <span class=" selected">{{selectedCountry.name}}</span>
+            </div>
+            <div class="caret" [ngClass]="{'caret-rotate': viewOptions }"></div>
+        </div>
+        <ul class="menu inline gap-s" [ngClass]="{'menu-open': viewOptions }">
+            @for (option of countryOptions; track option.name) {
+            <li class="option inline" (click)="toggleDropdownMenu(option)">
+                <img [src]="option.image" alt="Country Flag">
+                <span>{{option.name}}</span>
+            </li>
+            }
+        </ul>
+    </div>
 </header>
