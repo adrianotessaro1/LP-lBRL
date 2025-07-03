@@ -24,7 +24,9 @@
         <div class="newsletter inline gap-m align-center between">
             <div class="text column gap-xs">
                 <h3>Newsletter</h3>
-                {{'footer.newsletter' | translate}}
+                <span>
+                    {{'footer.newsletter' | translate}}
+                </span>
             </div>
             <form class="input-field inline gap-m" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
                 <input matInput class="input-fill-default" matInput placeholder="{{'placeholder.email' | translate}}"

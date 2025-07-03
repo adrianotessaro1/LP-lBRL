@@ -12,6 +12,11 @@
     padding: 30px 80px 0;
     background-color: v.$color-bg-main;
 
+    @include mix.mq("desktop-wide", min) {
+      background: #000101;
+      padding: 40px 100px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 30px 60px 0;
     }
@@ -24,6 +29,10 @@
       img {
         height: 32px;
         width: auto;
+
+        @include mix.mq("desktop-wide", min) {
+          height: 40px;
+        }
 
         @include mix.mq("phone-wide", max) {
           height: 28px;
@@ -41,6 +50,10 @@
       position: relative;
       transition: color 0.2s ease;
 
+      @include mix.mq("desktop-wide", min) {
+        font-size: 1.125rem;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -50,7 +63,8 @@
         bottom: -8px;
         left: 0;
         transform: scaleX(0);
-        transition: transform 0.25s linear;
+        transform-origin: left;
+        transition: transform 0.2s linear;
       }
 
       &:hover {

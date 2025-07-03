@@ -2,6 +2,7 @@
 @use "./assets/styles/common-classes.scss";
 @use "./assets/styles/mixinn.scss" as mix;
 @use "./assets/styles/variables.scss" as v;
+@use "./assets/styles/scrollbar.scss";
 @import "prismjs/themes/prism-okaidia.css";
 @import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
@@ -46,6 +47,10 @@ h2 {
   font-weight: 600;
   position: relative;
   color: v.$primary-500;
+
+  @include mix.mq("desktop-wide", min) {
+    font-size: v.$font-xxl;
+  }
 }
 
 h3 {

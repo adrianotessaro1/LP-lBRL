@@ -11,6 +11,10 @@
     position: relative;
     align-items: center;
 
+    @include mix.mq("desktop-wide", min) {
+      padding: 80px 100px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 40px 60px;
     }
@@ -56,6 +60,11 @@
         font-size: 1.25rem;
         line-height: 1.25 * 1.6;
         max-width: 610px;
+
+        @include mix.mq("desktop-wide", min) {
+          font-size: 1.375rem;
+          line-height: 1.375 * 1.6;
+        }
 
         @include mix.mq("tablet", max) {
           max-width: max-content;

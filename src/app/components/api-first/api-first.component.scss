@@ -10,6 +10,10 @@
     width: 100%;
     height: 100%;
 
+    @include mix.mq("desktop-wide", min) {
+      padding: 80px 100px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 40px 60px;
     }
@@ -77,6 +81,10 @@
       justify-content: flex-start;
       align-items: flex-start;
 
+      @include mix.mq("desktop-wide", min) {
+        grid-template-columns: minmax(300px, 600px) 1fr;
+      }
+
       @include mix.mq("tablet", max) {
         grid-template-columns: 1fr;
         gap: v.$space-xl;
@@ -128,6 +136,11 @@
             position: relative;
             width: 100%; /* make it span the full card width */
 
+            @include mix.mq("desktop-wide", min) {
+              font-size: 1.125rem;
+              line-height: 1.6;
+            }
+
             @include mix.mq("phablet", max) {
               font-size: 0.8rem;
             }
@@ -142,6 +155,10 @@
 
       .bullets {
         span {
+          align-self: center;
+          @include mix.mq("desktop-wide", min) {
+            font-size: v.$font-l;
+          }
           @include mix.mq("phone-wide", max) {
             font-size: 1.125rem;
           }
@@ -150,6 +167,11 @@
         mat-icon.icon {
           min-width: 28px;
           min-height: 28px;
+
+          @include mix.mq("desktop-wide", min) {
+            min-width: 36px !important;
+            min-height: 36px !important;
+          }
         }
         button {
           width: fit-content;

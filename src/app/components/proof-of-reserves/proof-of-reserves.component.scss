@@ -7,7 +7,11 @@
 
   section {
     padding: 60px 80px;
-    justify-content: space-between;
+    align-items: flex-start;
+
+    @include mix.mq("desktop-wide", min) {
+      padding: 80px 100px;
+    }
 
     @include mix.mq("tablet-wide", max) {
       padding: 40px 60px;
@@ -19,74 +23,119 @@
       padding: 40px 30px;
     }
 
-    .left-container {
-      flex: 1 1 55%;
+    h2 {
+      max-width: 800px;
 
-      h2 {
-        margin-bottom: v.$space-xl;
-
-        @include mix.mq("tablet-wide", max) {
-          text-align: center;
-        }
-        &::before {
-          position: absolute;
-          content: "";
-          width: 200px;
-          height: 3px;
-          top: -(v.$space-s);
-          background: linear-gradient(
-            135deg,
-            v.$primary-900 0%,
-            v.$color-bg-main 100%
-          );
-
-          @include mix.mq("tablet-wide", max) {
-            width: 0;
-          }
-        }
+      @include mix.mq("desktop-wide", min) {
+        margin-bottom: v.$space-l;
       }
 
-      .container {
+      @include mix.mq("tablet-wide", max) {
+        margin-bottom: v.$space-l;
+      }
+
+      @include mix.mq("tablet-wide", max) {
+        text-align: center;
+        align-self: center;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 200px;
+        height: 3px;
+        top: -(v.$space-s);
+        background: linear-gradient(
+          135deg,
+          v.$primary-900 0%,
+          v.$color-bg-main 100%
+        );
+
         @include mix.mq("tablet-wide", max) {
-          justify-content: center;
-          align-items: center;
-        }
-        span {
-          font-size: v.$font-m;
-
-          @include mix.mq("phone-wide", max) {
-            font-size: 1.125rem;
-          }
-        }
-
-        mat-icon {
-          min-width: 28px !important;
-          min-height: 28px !important;
+          width: 0;
         }
       }
     }
 
-    .second-container {
-      .chart {
-        flex: 1 1 25%;
-        height: 300px;
-        margin-top: 87px;
+    .wrapper {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: v.$space-xl;
 
-        @include mix.mq("tablet-wide", max) {
-          margin-top: 60px;
+      @include mix.mq("tablet-wide", max) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .first-container {
+        display: flex;
+        flex: 1 1 55%;
+        align-self: center;
+        @include mix.mq("desktop-wide", min) {
+          flex: 1 1 45%;
         }
 
-        canvas {
-          width: 100% !important;
-          height: 100% !important;
+        .container {
+          @include mix.mq("desktop-wide", min) {
+            font-size: v.$space-xl;
+          }
+          @include mix.mq("tablet-wide", max) {
+            justify-content: center;
+            align-items: center;
+            gap: v.$space-m;
+          }
+
+          span {
+            font-size: v.$font-m;
+            align-self: center;
+
+            @include mix.mq("desktop-wide", min) {
+              font-size: v.$font-l;
+            }
+
+            @include mix.mq("phone-wide", max) {
+              font-size: 1.125rem;
+            }
+          }
+
+          mat-icon {
+            min-width: 28px !important;
+            min-height: 28px !important;
+
+            @include mix.mq("desktop-wide", min) {
+              min-width: 36px !important;
+              min-height: 36px !important;
+              margin-bottom: 16px;
+            }
+          }
         }
       }
 
-      .link {
-        a {
-          text-decoration: none;
-          color: v.$text-dark-700;
-          opacity: 0.7;
+      .second-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        flex: 1 1 25%;
+
+        @include mix.mq("desktop-wide", min) {
+          flex: 1 1 35%;
+        }
+
+        .chart {
+          height: 100%;
+          canvas {
+            width: 100% !important;
+            height: 240px;
+
+            @include mix.mq("desktop-wide", min) {
+              height: 300px;
+              margin-top: 0;
+            }
+          }
         }
       }
     }

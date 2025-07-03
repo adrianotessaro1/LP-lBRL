@@ -5,6 +5,10 @@
   section {
     padding: 120px 80px 60px;
 
+    @include mix.mq("desktop-wide", min) {
+      padding: 140px 100px 80px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 60px 60px 40px;
     }
@@ -23,8 +27,8 @@
           top: 50%;
           transform: translate(-50%, -50%);
           font-weight: 600;
-          line-height: 136px;
-          font-size: 136px;
+          line-height: 144px;
+          font-size: 144px;
           background: linear-gradient(180deg, #62bd0094, #a67e3a1c 50%);
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -43,6 +47,11 @@
 
       .element {
         max-width: 780px;
+
+        @include mix.mq("desktop-wide", min) {
+          max-width: 840px;
+          margin-bottom: v.$space-s;
+        }
         margin-bottom: v.$space-xs;
         align-self: center;
 

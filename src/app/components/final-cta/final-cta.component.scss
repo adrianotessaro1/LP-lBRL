@@ -5,6 +5,10 @@
   section {
     padding: 60px 80px;
 
+    @include mix.mq("desktop-wide", min) {
+      padding: 80px 100px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 40px 60px;
     }
@@ -15,6 +19,11 @@
 
     .container {
       padding: v.$space-xxl v.$space-xl;
+
+      @include mix.mq("desktop-wide", min) {
+        padding: 80px 96px;
+      }
+
       width: 100%;
       border-radius: v.$space-m;
       background: linear-gradient(

@@ -8,6 +8,10 @@
     grid-template-columns: 1fr 1fr;
     gap: v.$space-xl;
 
+    @include mix.mq("desktop-wide", min) {
+      padding: 80px 100px;
+    }
+
     @include mix.mq("tablet-wide", max) {
       padding: 40px 60px;
       display: flex;
@@ -81,7 +85,7 @@
 
       @include mix.mq("tablet-small", max) {
         flex-direction: column;
-         gap: v.$space-m;
+        gap: v.$space-m;
       }
 
       .card {
@@ -115,6 +119,11 @@
 
         p {
           line-height: 1rem * v.$line-height-l;
+
+          @include mix.mq("desktop-wide", min) {
+            font-size: 1.125rem;
+            line-height: 1.125rem * 1.6;
+          }
         }
       }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { BaseChartDirective } from 'ng2-charts';
@@ -31,10 +31,7 @@ export class ProofOfReservesComponent implements OnInit {
     maintainAspectRatio: false,
 
     datasets: {
-      bar: {
-        categoryPercentage: 1,
-        barPercentage: 0.8,
-      },
+      
     },
     layout: {
       padding: { top: 25, right: 0, bottom: 0, left: 0 },
@@ -42,7 +39,7 @@ export class ProofOfReservesComponent implements OnInit {
     scales: {
       x: {
         grid: { display: false },
-        ticks: { color: '#aaa' },
+        ticks: { color: '#aaa', font: {size: 16} },
       },
       y: { display: false },
     },
@@ -65,10 +62,21 @@ export class ProofOfReservesComponent implements OnInit {
   constructor(private readonly dataService: ChartDataService) {}
 
   public ngOnInit(): void {
+    this.createChart();
+  }
 
+  @HostListener('window: resize', [])
+  public onResize(): void {
+    this.createChart();
+  }
+
+  public createChart(): void {
     if (window.innerWidth <= 500) {
-      this.barThickness = 120;
-    } else {
+      this.barThickness = 110;
+    } else if (window.innerWidth >= 1440) {
+      this.barThickness = 300;
+    }
+    {
       this.barThickness = 140;
     }
 
@@ -91,8 +99,8 @@ export class ProofOfReservesComponent implements OnInit {
           data: [0, 0],
           backgroundColor: [greenGradient, greenGradient],
           borderRadius: 8, // slightly rounded corners
-          barThickness: this.barThickness, // fixed width
-          maxBarThickness: this.barThickness,
+          barThickness: this.barThickness,
+          maxBarThickness: 4000,
         },
       ],
     };

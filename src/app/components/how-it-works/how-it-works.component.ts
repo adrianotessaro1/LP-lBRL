@@ -19,11 +19,11 @@ export class HowItWorksComponent implements OnInit {
   public smallScreen: boolean = false;
 
   public ngOnInit(): void {
-    this.smallScreen = window.innerWidth <= 920 && window.innerWidth >= 480;
+    this.smallScreen = window.innerWidth <= 1000 && window.innerWidth >= 480;
   }
 
   @HostListener('window:resize', [])
   public onResize(): void {
-    this.smallScreen = window.innerWidth <= 920 && window.innerWidth >= 480;
+    this.smallScreen = window.innerWidth <= 1000 && window.innerWidth >= 480;
   }
 }
