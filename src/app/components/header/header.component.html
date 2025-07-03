@@ -1,8 +1,8 @@
-<header class="header centered inline between padding-20 secondary-bg" [ngClass]="{scrolled: isScrolled}">
+<header class="centered inline between padding-20 secondary-bg" [ngClass]="{scrolled: isScrolled}">
     <div class="logo">
-        <img src="/assets/images/logo.png" alt="tBRL Logo">
+        <img src="/assets/images/logo.png" alt="tBRL Logo" class="to-point">
     </div>
-    <nav class="inline gap-xl">
+    <nav class="inline gap-xl" *ngIf="bigScreen">
         <a href="#how-it-works" class="to-point">{{'sections.howItWorks' | translate}}</a>
         <a href="#proof-of-reserves" class="to-point">{{'sections.proofOfReserves' | translate}}</a>
         <a href="#api-first" class="to-point">{{'sections.apiFirst' | translate}}</a>

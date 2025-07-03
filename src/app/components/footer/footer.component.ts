@@ -7,9 +7,12 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  ValidationErrors,
+  ValidatorFn,
   Validators,
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 
 @Component({
   selector: 'app-footer',
@@ -19,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     ReactiveFormsModule,
     MatInputModule,
+    ScrollAnimateDirective
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
@@ -26,7 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 export class FooterComponent {
   public emailForm: FormGroup = new FormGroup({
     email: new FormControl<string | null>(null, {
-      validators: [Validators.required, Validators.email],
+      validators: [Validators.required, emailValidator],
     }),
   });
 
@@ -52,3 +56,17 @@ export class FooterComponent {
     }
   }
 }
+
+export const emailValidator: ValidatorFn = (
+  control: AbstractControl
+): ValidationErrors | null => {
+  const EMAIL_REGEX: RegExp = /^[a-z0-9._]+@[a-z]+\.[a-z]{2,3}(\.[a-z]{2,})?$/g;
+
+  if (!control?.value) {
+    return null;
+  }
+
+  return EMAIL_REGEX.test(control?.value)
+    ? null
+    : { emailError: 'only valid email' };
+};

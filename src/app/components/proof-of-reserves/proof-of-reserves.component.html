@@ -4,21 +4,28 @@
             {{ 'proofOfReserves.title' | translate }}
         </h2>
         <div class="container column wth-100 gap-l">
-            <div class="inline gap-s">
+            <div class="inline gap-s animated" appScrollAnimate>
                 <mat-icon svgIcon="squares" class="icon"></mat-icon>
                 <span>{{ 'proofOfReserves.bullet1' | translate }}</span>
             </div>
-            <div class="inline align-center gap-s">
+            <div class="inline align-center gap-s animated" appScrollAnimate>
                 <mat-icon svgIcon="squares" class="icon"></mat-icon>
                 <span>{{ 'proofOfReserves.bullet2' | translate }}</span>
             </div>
-            <div class="inline align-center gap-s">
+            <div class="inline align-center gap-s animated" appScrollAnimate>
                 <mat-icon svgIcon="squares" class="icon"></mat-icon>
                 <span>{{ 'proofOfReserves.bullet3' | translate }}</span>
             </div>
         </div>
     </div>
-    <div class="right-container">
-        
+    <div class="second-container column centered gap-s">
+        <div class="chart animated" appScrollAnimate>
+            <canvas baseChart chartType="bar" [data]="barChartData" [options]="barChartOptions" id="barChartCanvas">
+            </canvas>
+        </div>
+        <div class="link">
+            <a href="https://reserve.fact.finance/tokeniza">https://reserve.fact.finance/tokeniza</a>
+        </div>
     </div>
+
 </section>

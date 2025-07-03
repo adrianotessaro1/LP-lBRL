@@ -1,13 +1,17 @@
-<section class="wth-100 centered" id="footer">
+<section class="wth-100 centered" id="footer" appScrollAnimate>
     <div class="container column">
-        <div class="between inline align-center">
+        <div class="between inline align-center first-container">
             <img src="/assets/images/logo.png" alt="tBRL Logo">
             <div class="links inline gap-l">
-                <a href="" class="link">{{'footer.links.whitepaper' | translate}}</a>
-                <a href="" class="link">{{'footer.links.proofOfReserves' | translate}}</a>
-                <a href="" class="link">{{'footer.links.apiDocs' | translate}}</a>
-                <a href="" class="link">{{'footer.links.termsOfUse' | translate}}</a>
-                <a href="" class="link">{{'footer.links.amlPolicy' | translate}}</a>
+                <div class="inline gap-l group">
+                    <a href="" class="link">{{'footer.links.whitepaper' | translate}}</a>
+                    <a href="" class="link">{{'footer.links.proofOfReserves' | translate}}</a>
+                    <a href="" class="link">{{'footer.links.apiDocs' | translate}}</a>
+                </div>
+                <div class="inline gap-l group">
+                    <a href="" class="link">{{'footer.links.termsOfUse' | translate}}</a>
+                    <a href="" class="link">{{'footer.links.amlPolicy' | translate}}</a>
+                </div>
             </div>
         </div>
         <div class="social-media">
@@ -25,16 +29,19 @@
             <form class="input-field inline gap-m" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
                 <input matInput class="input-fill-default" matInput placeholder="{{'placeholder.email' | translate}}"
                     formControlName="email" required />
-                <span class="error-hint">
+                <span class="error-hint column">
                     <ng-container
-                        *ngIf="showError('emailForm', emailForm) && emailForm.get('monthly_amount')?.hasError('required')">
+                        *ngIf="showError('emailForm', emailForm) && emailForm.get('email')?.hasError('required')">
                         {{ 'errorHint.mandatory' | translate }}
                     </ng-container>
+                    <ng-container *ngIf="emailForm.get('email')?.invalid && emailForm.get('email')?.value">
+                        {{ 'errorHint.email' | translate }}
+                    </ng-container>
+
                 </span>
                 <div class="column">
-                    <button class="btn secondary subscribe" [disabled]="emailForm.invalid">
-                        {{'footer.subscribe' | translate}}
-                        <mat-icon>forward_to_inbox</mat-icon>
+                    <button class="btn secondary" [disabled]="emailForm.invalid">{{'footer.subscribe' | translate}}
+                        <mat-icon class="secondary">forward_to_inbox</mat-icon>
                     </button>
                 </div>
             </form>

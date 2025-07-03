@@ -1,4 +1,5 @@
 @use "./../../../assets/styles/variables.scss" as v;
+@use "./../../../assets/styles/mixinn.scss" as mix;
 
 :host {
   section {
@@ -6,25 +7,54 @@
     width: 100%;
     background-color: v.$color-bg-secondary;
 
+    @include mix.mq("tablet-wide", max) {
+      padding: 40px 0px;
+    }
+
     .container {
       padding: 0 80px;
-      z-index: 10000;
-      width: 100%;
 
-      img {
-        height: 40px;
-        width: auto;
+      @include mix.mq("tablet-wide", max) {
+        padding: 0px 60px;
       }
 
-      .links {
-        a {
-          text-decoration: none;
-          color: v.$text-dark-500;
-          font-size: v.$font-m;
-          transition: color 0.15s ease;
+      @include mix.mq("phone-wide", max) {
+        padding: 0px 40px;
+      }
+      width: 100%;
 
-          &:hover {
-            color: v.$color-text-main;
+      .first-container {
+        gap: v.$space-l;
+        @include mix.mq("tablet-wide", max) {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: v.$space-xxs;
+        }
+        img {
+          height: 40px;
+          width: auto;
+        }
+
+        .links {
+          @include mix.mq("tablet", max) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: v.$space-m;
+          }
+          a {
+            text-decoration: none;
+            color: v.$text-dark-500;
+            font-size: 1.125rem;
+            transition: color 0.15s ease;
+
+            &:hover {
+              color: v.$color-text-main;
+            }
+          }
+          .group {
+            @include mix.mq("phone-wide", max) {
+              flex-direction: column;
+            }
           }
         }
       }
@@ -39,11 +69,32 @@
 
       .newsletter {
         margin-top: v.$space-l;
+
+        @include mix.mq("tablet-wide", max) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         form {
-          input {
-            min-width: 480px;
+          width: 100%;
+          @include mix.mq("tablet-wide", max) {
+            flex-direction: column;
+            align-items: flex-start;
           }
-          
+
+          @include mix.mq("tablet", max) {
+            align-items: flex-end;
+          }
+          input {
+            min-width: 360px;
+            margin-right: v.$space-xs;
+
+            @include mix.mq("tablet", max) {
+              width: 100%;
+              min-width: 100%;
+              margin-right: 0;
+            }
+          }
+
           span.error-hint {
             position: absolute;
             bottom: -22px;
@@ -53,11 +104,16 @@
             color: v.$app-red;
           }
 
-          .subscribe {
-            padding: 12px 60px 12px 20px !important;
+          button {
+            padding: 12px 54px 12px 20px;
+            white-space: nowrap;
+            mat-icon {
+              width: 24px;
+              height: 24px;
+            }
 
             &:hover {
-              mat-icon {
+              mat-icon.secondary {
                 color: v.$text-dark-800;
               }
             }
@@ -78,5 +134,3 @@
     }
   }
 }
-
-

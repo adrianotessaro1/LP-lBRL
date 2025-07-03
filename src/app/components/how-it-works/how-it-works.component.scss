@@ -1,19 +1,36 @@
 @use "./../../../assets/styles/variables.scss" as v;
+@use "./../../../assets/styles/mixinn.scss" as mix;
 
 :host {
   width: 100%;
   height: 100%;
 
   .how-it-works {
-    padding: 120px 80px 60px 80px;
+    padding: 100px 80px 60px 80px;
     display: grid;
     grid-template-columns: 4fr 1fr;
     align-items: start;
     gap: v.$space-m;
     position: relative;
 
+    @media (max-width: 1180px) {
+      grid-template-columns: 1fr;
+    }
+
+    @include mix.mq("tablet-wide", max) {
+      padding: 60px 60px 40px;
+    }
+
+    @include mix.mq("phone-wide", max) {
+      padding: 40px 30px 40px;
+    }
+
     .main {
       h2 {
+        @media (max-width: 920px) {
+          text-align: center;
+        }
+
         &::before {
           position: absolute;
           content: "";
@@ -22,9 +39,13 @@
           top: -(v.$space-s);
           background: linear-gradient(
             135deg,
-            v.$primary-700 0%,
+            v.$primary-900 0%,
             v.$color-bg-main 100%
           );
+
+          @media (max-width: 920px) {
+            width: 0;
+          }
         }
       }
 
@@ -35,10 +56,29 @@
         margin-top: 48px;
         align-items: start;
 
+        @media (max-width: 920px) {
+          grid-template-columns: 1fr;
+        }
+
         .card {
-          border: v.$text-light-400 1px solid;
+          border: #00550096 1px solid;
           padding: v.$space-m;
           border-radius: 12px;
+          height: 100%;
+
+          @media (max-width: 920px) {
+            flex-direction: row;
+            justify-content: flex-start;
+          }
+
+          @include mix.mq("tablet-small", max) {
+            flex-direction: column;
+            gap: v.$space-xs;
+          }
+
+          &.last {
+            justify-content: flex-start;
+          }
 
           .image-container {
             width: 160px;
@@ -51,25 +91,62 @@
             }
           }
 
-          .information {
-            gap: v.$space-s;
-            font-size: v.$font-s;
+          .wrapper {
+            display: flex;
+            flex-direction: column;
 
-            &.left-margin {
-              margin-left: v.$space-s;
+            @media (max-width: 920px) {
+              align-items: flex-start;
+              gap: v.$space-m;
             }
 
-            span.code {
-              padding: 4px v.$space-xxs;
-              border-radius: 4px;
-              background-color: v.$color-bg-secondary;
-              
-              &.burn {
-                color: v.$app-red;
+            @include mix.mq("tablet-small", max) {
+              gap: v.$space-xs;
+            }
+
+            @include mix.mq("phone-wide", max) {
+              justify-content: center;
+              align-items: center;
+            }
+
+            .information {
+              gap: v.$space-s;
+              font-size: v.$font-s;
+
+              @media (max-width: 920px) {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
               }
 
-              &.mint {
-                color: v.$app-blue;
+              @include mix.mq("phone-wide", max) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .last-info {
+                @media (max-width: 920px) {
+                  flex-direction: row;
+                }
+
+                @include mix.mq("phone-wide", max) {
+                  flex-direction: column;
+                }
+              }
+
+              span.code {
+                padding: 4px v.$space-xxs;
+                border-radius: 4px;
+                background-color: v.$color-bg-secondary;
+
+                &.burn {
+                  color: v.$app-red;
+                }
+
+                &.mint {
+                  color: v.$app-blue;
+                }
               }
             }
           }
@@ -86,19 +163,47 @@
     }
 
     .sidebar {
-      align-items: end;
+      align-items: center;
+      margin-top: 90px;
+
+      @media (max-width: 1180px) {
+        margin-top: v.$space-s;
+      }
 
       h3 {
-        text-align: end;
         margin-bottom: v.$space-m;
+        text-align: center;
       }
 
       .blockchains {
         gap: v.$space-l;
-        align-items: end;
+        align-items: center;
+
+        @media (max-width: 1180px) {
+          display: flex;
+          flex-direction: row;
+          gap: 80px;
+        }
+
+        @include mix.mq("tablet-small", max) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: v.$space-xxl;
+        }
+
         img {
           width: 60px;
           height: 60px;
+
+          @media (max-width: 1180px) {
+            width: 80px;
+            height: 80px;
+          }
+
+          @include mix.mq("phone-wide", max) {
+            width: 66px;
+            height: 66px;
+          }
         }
       }
     }

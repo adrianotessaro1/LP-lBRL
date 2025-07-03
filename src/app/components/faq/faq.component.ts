@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 
 @Component({
   selector: 'app-faq',
-  imports: [TranslateModule, CommonModule, MatIconModule],
+  imports: [TranslateModule, CommonModule, MatIconModule, ScrollAnimateDirective],
   templateUrl: './faq.component.html',
   styleUrl: './faq.component.scss',
 })

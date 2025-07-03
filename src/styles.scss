@@ -1,6 +1,6 @@
 /* 1) Pull in your v maps and utilities */
 @use "./assets/styles/common-classes.scss";
-@use "./assets/styles/mixinn.scss";
+@use "./assets/styles/mixinn.scss" as mix;
 @use "./assets/styles/variables.scss" as v;
 @import "prismjs/themes/prism-okaidia.css";
 @import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -23,13 +23,14 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   letter-spacing: 0px;
   font-family: "Inter", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -44,7 +45,7 @@ h2 {
   line-height: v.$font-xsl * v.$line-height-s;
   font-weight: 600;
   position: relative;
-  color: v.$primary-800;
+  color: v.$primary-500;
 }
 
 h3 {
@@ -54,6 +55,7 @@ h3 {
 }
 
 .input-fill-default {
+  @extend .input-fill;
   background: v.$color-bg-secondary;
   border-radius: 12px;
   height: 100%;
@@ -71,4 +73,78 @@ h3 {
 
 .input-fill-default:hover {
   border: 1px solid v.$primary-800;
+}
+
+.input-fill,
+.custom-text-area-fill,
+.select-fill-input {
+  border: none;
+  // border-bottom: 1px solid v.$primary-500;
+  border: 1px solid v.$color-text-main;
+  background: transparent;
+  // padding: 14px 14px 14px 0;
+  padding: 14px;
+  width: 100%;
+  color: v.$color-text-main;
+
+  &.mb {
+    margin-bottom: 23px;
+  }
+
+  &:has(.not-match) {
+    padding-bottom: 23px;
+
+    &.mb {
+      margin-bottom: 0;
+    }
+  }
+
+  &:read-only {
+    cursor: default;
+  }
+
+  &[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  &::-webkit-input-placeholder {
+    color: v.$off-white-normal;
+  }
+
+  &:-moz-placeholder {
+    color: v.$off-white-normal;
+  }
+
+  &:not(:read-only, :disabled) {
+    &:focus {
+      border-color: v.$primary-700;
+      border-width: 2px;
+    }
+
+    &.ng-invalid.ng-touched {
+      border-color: v.$app-red;
+    }
+  }
+}
+
+// ANIMATIONS
+
+// Base state: hidden and shifted down
+.animated {
+  opacity: 0; // fully transparent
+  transform: translateY(40px); // moved down 20px
+  transition: opacity 0.6s ease-out,
+    // fade in over 0.6s
+    transform 0.6s ease-out; // slide up over 0.6s
+}
+
+// “in-view” state: when the directive adds this class
+.in-view {
+  opacity: 1; // fully opaque
+  transform: translateY(0); // back to original position
 }

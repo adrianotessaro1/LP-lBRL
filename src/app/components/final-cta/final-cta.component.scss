@@ -1,33 +1,71 @@
 @use "./../../../assets/styles/variables.scss" as v;
+@use "./../../../assets/styles/mixinn.scss" as mix;
 
 :host {
   section {
     padding: 60px 80px;
 
+    @include mix.mq("tablet-wide", max) {
+      padding: 40px 60px;
+    }
+
+    @include mix.mq("phone-wide", max) {
+      padding: 40px 30px;
+    }
+
     .container {
-      background-color: #28282858;
-      padding: v.$space-xxl;
+      padding: v.$space-xxl v.$space-xl;
+      width: 100%;
       border-radius: v.$space-m;
+      background: linear-gradient(
+        145deg,
+        #021301 0%,
+        /* almost-black forest floor */ #074f07 40%,
+        /* deep emerald mid-tone */ #033003 70%,
+        /* shadowy pine green */ #021301 100%
+      );
 
       h1 {
         text-align: center;
+
+        @include mix.mq("tablet-wide", max) {
+          font-size: 3rem;
+          line-height: 3rem * v.$line-height-s;
+        }
+
+        @include mix.mq("tablet-small", max) {
+          font-size: 2.5rem;
+          line-height: 2.5rem * v.$line-height-s;
+        }
       }
 
       p {
         font-size: v.$font-m;
         line-height: v.$font-m * 1.6;
+        text-align: center;
+
+        @include mix.mq("phone-wide", max) {
+          font-size: 1.125rem;
+          line-height: 1.125rem * v.$line-height-m;
+        }
       }
 
-      button {
-        padding: 12px 54px 12px 20px;
-        mat-icon {
-          width: 24px;
-          height: 24px;
+      .button-container {
+        @include mix.mq("phablet", max) {
+          flex-direction: column;
         }
 
-        &:hover {
-          mat-icon.secondary {
-            color: v.$text-dark-800;
+        button {
+          padding: 12px 54px 12px 20px;
+          mat-icon {
+            width: 24px;
+            height: 24px;
+          }
+
+          &:hover {
+            mat-icon.secondary {
+              color: v.$text-dark-800;
+            }
           }
         }
       }

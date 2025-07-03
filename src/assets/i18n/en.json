@@ -1,13 +1,13 @@
 {
   "sections": {
     "hero": "Home",
-    "howItWorks": "HOW IT WORKS",
-    "proofOfReserves": "RESERVES",
+    "howItWorks": "How It Works",
+    "proofOfReserves": "Reserves",
     "apiFirst": "API",
-    "whitelabel": "WHITELABEL",
-    "useCases": "USE CASES",
+    "whitelabel": "Whitelabel",
+    "useCases": "Use Cases",
     "faq": "FAQ",
-    "finalCTA": "GET STARTED"
+    "finalCTA": "Get Started"
   },
   "headline": "Enter and exit Brazil in seconds",
   "subHeadline": "tBRL is the 100% BRL-backed stablecoin that connects Pix to Web3, unlocking instant liquidity for exchanges, fintechs, digital banks, and global enterprises.",
@@ -107,5 +107,7 @@
     "newsletter": "Get monthly updates on BRL on-chain liquidity.",
     "subscribe": "Subscribe"
   },
-  "placeholder.email": "Enter your email..."
+  "placeholder.email": "Enter your email...",
+  "errorHint.email": "Enter a valid email",
+  "errorHint.mandatory": "Required field"
 }

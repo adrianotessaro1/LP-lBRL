@@ -108,5 +108,7 @@
     "subscribe": "Inscrever-se"
   },
 
-  "placeholder.email": "Entre o seu email..."
+  "placeholder.email": "Entre o seu email...",
+  "errorHint.email": "Insira um email válido",
+  "errorHint.mandatory": "Campo obrigatório"
 }

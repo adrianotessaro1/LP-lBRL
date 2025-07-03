@@ -1,12 +1,15 @@
-<section class="wth-100 centered gap-l" id="whitelabel">
-    <div class="info-container column">
+<section class="wth-100 centered gap-l " id="whitelabel">
+    <div class="info-container column animated " appScrollAnimate [appScrollAnimateThreshold]="0.25">
         <h2>{{'whitelabel.title' | translate}}</h2>
         <span class="subtitle">{{'whitelabel.paragraph' | translate}}</span>
-        <span class="secondary-call">{{'whitelabel.secondaryCall' | translate}}
+        <div class="secondary-call align-center">
+            <span>{{'whitelabel.secondaryCall' | translate}}
+            </span>
             <mat-icon svgIcon="right_arrow_yellow"></mat-icon>
-        </span>
+        </div>
+
     </div>
-    <div class="image-container">
+    <div class="image-container animated" appScrollAnimate [appScrollAnimateThreshold]="0.25">
         <img src="/assets/images/mock.png" alt="Whitelabel Image">
     </div>
 </section>

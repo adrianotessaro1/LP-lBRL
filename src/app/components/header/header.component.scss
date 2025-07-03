@@ -5,16 +5,34 @@
   width: 100%;
   flex: 1;
 
-  header.header {
+  header {
     position: sticky;
     top: 0;
     z-index: 10000;
-    padding: 20px 80px;
-    background-color: transparent;
+    padding: 30px 80px 0;
+    background-color: v.$color-bg-main;
 
-    img {
-      height: 32px;
-      width: auto;
+    @include mix.mq("tablet-wide", max) {
+      padding: 30px 60px 0;
+    }
+
+    @include mix.mq("phone-wide", max) {
+      padding: 20px 40px 0;
+    }
+
+    .logo {
+      img {
+        height: 32px;
+        width: auto;
+
+        @include mix.mq("phone-wide", max) {
+          height: 28px;
+        }
+      }
+
+      &:hover {
+        opacity: 1 !important;
+      }
     }
 
     a {
@@ -45,15 +63,18 @@
     }
 
     .dropdown {
-      min-width: 144px;
       position: relative;
+      min-width: 144px;
 
       @include mix.mq("tablet", max) {
         font-size: v.$font-s;
       }
 
+      @include mix.mq("phone", max) {
+        min-width: 120px;
+      }
+
       .select {
-        background: #2a2f3b;
         color: v.$color-text-main;
         display: flex;
         border-radius: 8px;
@@ -61,6 +82,7 @@
         align-items: center;
         padding: v.$space-xxs;
         cursor: pointer;
+        height: 40px;
 
         .option-selected {
           display: flex;
@@ -73,7 +95,7 @@
         }
 
         &:hover {
-          background: #323741;
+          background: v.$color-bg-secondary;
         }
       }
 
@@ -84,6 +106,12 @@
         border-right: 5px solid transparent;
         border-top: 6px solid #fff;
         transition: 0.3s;
+
+        @include mix.mq("phone", max) {
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 5px solid #fff;
+        }
       }
 
       .caret-rotate {
@@ -93,7 +121,7 @@
       .menu {
         list-style: none;
         padding: 0.25rem;
-        background: #323741;
+        background: v.$color-bg-secondary;
         border: 1px #363a43 solid;
         border-radius: 0.5rem;
         color: v.$color-text-main;
@@ -108,6 +136,10 @@
         transition: 0.2s;
         z-index: 1;
 
+        @include mix.mq("phone", max) {
+          top: 3rem;
+        }
+
         li.option {
           padding: 0.5rem;
           margin: 0.3rem 0;
@@ -117,6 +149,7 @@
 
           img {
             width: 24px;
+            height: 32px;
             margin-right: v.$space-xs;
           }
 
@@ -137,14 +170,27 @@
       .selected {
         margin-right: 0.6rem;
       }
-
-      .select-clicked {
-        box-shadow: 0 0 0.8rem #26489a;
-      }
     }
     &.scrolled {
-      header.header {
-        background-color: rgba(v.$color-bg-main, 1);
+      background-color: transparent;
+      .logo {
+        opacity: 0.7;
+      }
+
+      .select {
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      nav {
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }

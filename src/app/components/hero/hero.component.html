@@ -1,9 +1,10 @@
-<section class="wth-100" id="hero">
+<section class="wth-100 in-view" id="hero" appScrollAnimate>
     <div class="background-wrapper">
-        <img src="/assets/images/hero-bg-edited.jpg" alt="Background Image - tBRL">
+        <img *ngIf="!smallScreen" src="/assets/images/hero-bg-edited.png" alt="Background Image - tBRL">
+        <img *ngIf="smallScreen" src="/assets/images/hero-bg-small.png" alt="Background Image - tBRL">
     </div>
     <div class="content column">
-        <div class="blockquote">
+        <div class="blockquote" *ngIf="!smallScreen">
             <blockquote class="fs-16">
                 “{{ 'socialProof' | translate }}”
             </blockquote>
@@ -25,6 +26,11 @@
                 {{ 'whitepaper' | translate }}
                 <mat-icon>description</mat-icon>
             </button>
-        </div>
 
+        </div>
+        <div class="blockquote" *ngIf="smallScreen">
+            <blockquote class="fs-16">
+                “{{ 'socialProof' | translate }}”
+            </blockquote>
+        </div>
     </div>

@@ -1,4 +1,5 @@
 @use "./../../../assets/styles/variables.scss" as v;
+@use "./../../../assets/styles/mixinn.scss" as mix;
 
 :host {
   width: 100%;
@@ -9,19 +10,37 @@
     width: 100%;
     height: 100%;
 
+    @include mix.mq("tablet-wide", max) {
+      padding: 40px 60px;
+    }
+
+    @include mix.mq("phone-wide", max) {
+      padding: 40px 30px;
+    }
+
     .top-container {
       .container {
         display: inline-block;
         margin-bottom: v.$space-xs;
 
         .typewriter {
+          display: inline-block;
           font-family: monospace;
           letter-spacing: 3px;
           border-right: 2px solid;
           width: 100%;
           white-space: nowrap;
           overflow: hidden;
-          animation: typing 2s steps(9), cursor 0.4s step-end infinite alternate;
+          animation: typing 2s steps(9, end) forwards,
+            cursor 0.4s step-end infinite alternate;
+
+          @include mix.mq("tablet-wide", max) {
+            font-size: v.$font-xs;
+          }
+
+          &.in-view {
+            animation-play-state: running, running;
+          }
         }
 
         @keyframes cursor {
@@ -39,6 +58,15 @@
 
       .title {
         margin-bottom: v.$space-m;
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+
+        @include mix.mq("phone-wide", max) {
+          font-size: 1.125rem;
+        }
       }
     }
 
@@ -48,6 +76,12 @@
       column-gap: v.$space-xl;
       justify-content: flex-start;
       align-items: flex-start;
+
+      @include mix.mq("tablet", max) {
+        grid-template-columns: 1fr;
+        gap: v.$space-xl;
+        width: 100%;
+      }
 
       .code-block {
         overflow: hidden;
@@ -84,14 +118,19 @@
         }
 
         .code-body {
+          overflow-x: hidden;
           pre[class*="language-"].line-numbers {
             margin: 0;
             font-family: "Fira Code", monospace;
             font-size: 0.95rem;
             line-height: 1.5;
             color: #cdd6f4;
-            position: relative; /* required for Prism’s gutter */
+            position: relative;
             width: 100%; /* make it span the full card width */
+
+            @include mix.mq("phablet", max) {
+              font-size: 0.8rem;
+            }
 
             code {
               display: block; /* kill inline whitespace issues */
@@ -102,12 +141,22 @@
       }
 
       .bullets {
+        span {
+          @include mix.mq("phone-wide", max) {
+            font-size: 1.125rem;
+          }
+        }
+
         mat-icon.icon {
-          width: 28px;
-          height: 28px;
+          min-width: 28px;
+          min-height: 28px;
         }
         button {
           width: fit-content;
+
+          @include mix.mq("tablet", max) {
+            align-self: center;
+          }
 
           &:hover {
             mat-icon {

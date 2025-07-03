@@ -16,10 +16,11 @@ import {
   takeUntil,
   throttleTime,
 } from 'rxjs';
+import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 
 @Component({
   selector: 'app-use-cases',
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, ScrollAnimateDirective],
   templateUrl: './use-cases.component.html',
   styleUrl: './use-cases.component.scss',
 })

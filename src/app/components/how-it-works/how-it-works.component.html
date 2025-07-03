@@ -4,60 +4,73 @@
             {{ 'howItWorks.title' | translate }}
         </h2>
         <div class="cards-container inline">
-            <div class="card flex-1 column gap-m centered">
+            <div class="card flex-1 column gap-m centered animated" appScrollAnimate [appScrollAnimateThreshold]="0.35">
                 <div class="image-container">
                     <img src="/assets/images/onRamp.png" alt="On Ramp Representation Icon">
                 </div>
-                <div class="inline gap-s centered">
-                    <mat-icon svgIcon="one_circle"></mat-icon>
-                    <h3>On-Ramp</h3>
-                </div>
-                <div class="information left-margin column">
-                    <span class="fw-600">{{ 'howItWorks.onRamp.step1' | translate }}</span>
-                    <mat-icon svgIcon="down_arrow"></mat-icon>
-                    <div class="inline gap-xs">
-                        <span class="code mint">{{ 'howItWorks.onRamp.step2' | translate }}</span>
-                        <mat-icon svgIcon="right_arrow"></mat-icon>
-                        <span>{{ 'howItWorks.onRamp.step3' | translate }}</span>
+                <div class="wrapper">
+                    <div class="inline gap-s centered">
+                        <mat-icon svgIcon="one_circle"></mat-icon>
+                        <h3>On-Ramp</h3>
                     </div>
+                    <div class="information column centered">
+                        <span class="fw-600">{{ 'howItWorks.onRamp.step1' | translate }}</span>
+                        <mat-icon *ngIf="smallScreen" svgIcon="right_arrow"></mat-icon>
+                        <mat-icon *ngIf="!smallScreen" svgIcon="down_arrow"></mat-icon>
+                        <div class="column gap-xs centered last-info">
+                            <span class="code mint">{{ 'howItWorks.onRamp.step2' | translate }}</span>
+                            <mat-icon *ngIf="smallScreen" svgIcon="right_arrow"></mat-icon>
+                            <mat-icon *ngIf="!smallScreen" svgIcon="down_arrow"></mat-icon>
+                            <span>{{ 'howItWorks.onRamp.step3' | translate }}</span>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-            <div class="card flex-1 column centered gap-m">
+            <div class="card flex-1 column centered gap-m animated" appScrollAnimate [appScrollAnimateThreshold]="0.35">
                 <div class="image-container">
                     <img src="/assets/images/offRamp.png" alt="Off Ramp Representation Icon">
                 </div>
-                <div class="inline gap-s centered">
-                    <mat-icon svgIcon="two_circle"></mat-icon>
-                    <h3>Off-Ramp</h3>
-                </div>
-                <div class="information left-margin column ">
-                    <span class="fw-600">{{ 'howItWorks.offRamp.step1' | translate }}</span>
-                    <mat-icon svgIcon="down_arrow"></mat-icon>
-                    <div class="inline gap-xs">
-                        <span class="code burn">{{ 'howItWorks.offRamp.step2' | translate }}</span>
-                        <mat-icon svgIcon="right_arrow"></mat-icon>
-                        <span>{{ 'howItWorks.offRamp.step3' | translate }}</span>
+                <div class="wrapper">
+                    <div class="inline gap-s centered">
+                        <mat-icon svgIcon="two_circle"></mat-icon>
+                        <h3>Off-Ramp</h3>
+                    </div>
+                    <div class="information column centered ">
+                        <span class="fw-600">{{ 'howItWorks.offRamp.step1' | translate }}</span>
+                        <mat-icon *ngIf="smallScreen" svgIcon="right_arrow"></mat-icon>
+                        <mat-icon *ngIf="!smallScreen" svgIcon="down_arrow"></mat-icon>
+                        <div class="column gap-xs centered last-info">
+                            <span class="code burn">{{ 'howItWorks.offRamp.step2' | translate }}</span>
+                            <mat-icon *ngIf="smallScreen" svgIcon="right_arrow"></mat-icon>
+                            <mat-icon *ngIf="!smallScreen" svgIcon="down_arrow"></mat-icon>
+                            <span>{{ 'howItWorks.offRamp.step3' | translate }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card flex-1 column centered gap-m">
+            <div class="card flex-1 column centered gap-m animated last" appScrollAnimate
+                [appScrollAnimateThreshold]="0.35">
                 <div class="image-container">
                     <img src="/assets/images/crossBorder.png" alt="Cross Border Representation Icon">
                 </div>
-                <div class="inline gap-s centered">
-                    <mat-icon svgIcon="three_circle"></mat-icon>
-                    <h3>Cross-Border</h3>
+                <div class="wrapper">
+                    <div class="inline gap-s centered">
+                        <mat-icon svgIcon="three_circle"></mat-icon>
+                        <h3>Cross-Border</h3>
+                    </div>
+                    <div class="information column centered">
+                        <span class="fw-600">{{ 'howItWorks.crossBorder.step1' | translate }}</span>
+                        <mat-icon *ngIf="smallScreen">swap_horiz</mat-icon>
+                        <mat-icon *ngIf="!smallScreen">swap_vert</mat-icon>
+                        <span class="long-step">{{ 'howItWorks.crossBorder.step2' | translate }}</span>
+                    </div>
                 </div>
-                <div class="information column centered">
-                    <span class="fw-600">{{ 'howItWorks.crossBorder.step1' | translate }}</span>
-                    <mat-icon>swap_vert</mat-icon>
-                    <span class="long-step">{{ 'howItWorks.crossBorder.step2' | translate }}</span>
-                </div>
+
             </div>
         </div>
     </div>
-    <aside class="sidebar">
+    <aside class="sidebar animated column" appScrollAnimate [appScrollAnimateThreshold]="0.35">
         <h3>{{'howItWorks.sideTitle' | translate}}</h3>
         <div class="blockchains column">
             <img src="/assets/icons/moonbeam.svg" alt="MoonBeam Logo">

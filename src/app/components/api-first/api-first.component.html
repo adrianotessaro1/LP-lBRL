@@ -1,13 +1,13 @@
 <section class="wth-100 centered column gap-xxl" id="api-first">
     <div class="top-container centered column">
         <div class="container">
-            <span class="typewriter fs-s">API FIRST</span>
+            <span class="typewriter fs-s" appScrollAnimate>API FIRST</span>
         </div>
         <h2 class="title">{{'apiFirst.title' | translate}}</h2>
         <p class="subtitle fs-m">{{'apiFirst.subTitle' | translate}}</p>
     </div>
     <div class="main-content">
-        <div class="code-block column">
+        <div class="code-block column animated" appScrollAnimate>
             <!-- 1) Header with the red/yellow/green dots -->
             <div class="code-header">
                 <span class="dot red"></span>
@@ -17,7 +17,7 @@
             <!-- 2) Code body -->
             <div class="code-body">
                 <pre class="line-numbers language-js">
-                    <code>
+                    <code *ngIf="!smallScreen">
 POST /v1/mint 
 &#123;
     "pixKey": "empresa&#64;banco.com.br",           
@@ -27,10 +27,17 @@ POST /v1/mint
 
 
                     </code>
+                    <code *ngIf="smallScreen">
+POST /v1/mint 
+&#123;
+  "pixKey": "empresa&#64;banco.com.br",  
+  "amount": "1_000.00"
+&#125;
+                    </code>
                 </pre>
             </div>
         </div>
-        <div class="bullets column gap-l">
+        <div class="bullets column gap-l animated" appScrollAnimate>
             <div class="inline align-center gap-s">
                 <mat-icon svgIcon="squares" class="icon"></mat-icon>
                 <span class="fs-m">{{ 'apiFirst.latency' | translate }}</span>
